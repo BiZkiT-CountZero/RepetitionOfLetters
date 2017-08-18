@@ -1,0 +1,40 @@
+package com.gmail.bizkit245;
+
+public class Сharacter {
+
+	private char character;
+	private int count = 0;
+
+	public Сharacter(char character, int count) {
+		super();
+		this.character = character;
+		this.count = count;
+	}
+
+	public Сharacter() {
+		super();
+	}
+
+	public char getCharacter() {
+		return character;
+	}
+
+	public void setCharacter(char character) {
+		this.character = character;
+	}
+
+	public int getCount() {
+		return count;
+	}
+
+	public void setCount(int count) {
+		this.count = count;
+	}
+
+	@Override
+	public String toString() {
+		return character + " => " + count;
+
+	}
+
+}
