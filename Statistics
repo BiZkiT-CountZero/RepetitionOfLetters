@@ -1,0 +1,33 @@
+package com.gmail.bizkit245;
+
+import java.io.File;
+import java.util.ArrayList;
+
+public class Statistics {
+
+	ArrayList<Сharacter> chList = new ArrayList<>();
+
+	public void loadTextFromFile(File file) {
+		String text = TextHandler.loadTextFromFile(file);
+		text = text.toUpperCase();
+
+		for (char i = 'A'; i <= 'Z'; i++) {
+			int chCount = TextHandler.countCh(text, i);
+			if (chCount > 0) {
+				chList.add(new Сharacter(i, chCount));
+			}
+		}
+	}
+
+	@Override
+	public String toString() {
+		StringBuilder sb = new StringBuilder();
+		chList.sort((a, b) -> b.getCount() - a.getCount());
+		for (Сharacter ch : chList) {
+			sb.append(ch);
+			sb.append(System.lineSeparator());
+		}
+		return sb.toString();
+	}
+
+}
