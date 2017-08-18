@@ -1,0 +1,14 @@
+package com.gmail.bizkit245;
+
+import java.io.File;
+
+public class Main {
+
+	public static void main(String[] args) {
+
+		Statistics st = new Statistics();
+		st.loadTextFromFile(new File("Alice's Adventures in Wonderland.txt"));
+		System.out.print(st);
+	}
+
+}
