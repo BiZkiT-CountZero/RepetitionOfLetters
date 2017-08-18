@@ -1,0 +1,38 @@
+package com.gmail.bizkit245;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
+
+public class TextHandler {
+
+	public static String loadTextFromFile(File file) {
+		if (file == null) {
+			throw new IllegalArgumentException("null file pointer");
+		}
+		StringBuilder sb = new StringBuilder();
+
+		try (BufferedReader br = new BufferedReader(new FileReader(file))) {
+			String text = "";
+			for (; (text = br.readLine()) != null;) {
+				sb.append(text);
+			}
+		} catch (IOException e) {
+			System.out.println(e);
+		}
+		return sb.toString();
+	}
+
+	public static int countCh(String text, char character) {
+		int сhCount = 0;
+		for (char ch : text.toCharArray()) {
+			if (ch == character) {
+				сhCount += 1;
+			}
+		}
+		return сhCount;
+	}
+
+
+}
